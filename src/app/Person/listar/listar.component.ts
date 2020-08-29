@@ -49,6 +49,7 @@ export class ListarComponent implements OnInit, AfterViewInit {
       icon: 'pi pi-exclamation-circle',
       accept: () => {
         console.log("Mensaje: " + JSON.stringify(personDelete));
+        this.people = this.people.filter(p => p !== personDelete);
         this.service.deletePerson(personDelete)
           .subscribe(data => {
             this.people = this.people.filter(p => p !== personDelete);
