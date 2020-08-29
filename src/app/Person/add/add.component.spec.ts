@@ -36,6 +36,7 @@ describe('AddComponent', () => {
   beforeEach(() => {
     router = TestBed.get(Router);
     spyOn(router, 'navigate').and.callThrough();
+
     fixture = TestBed.createComponent(AddComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -44,5 +45,6 @@ describe('AddComponent', () => {
   it('should create', () => {
 
     expect(component).toBeDefined();
+
   });
 });

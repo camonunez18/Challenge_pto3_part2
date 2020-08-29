@@ -43,7 +43,6 @@ export class ListarComponent implements OnInit, AfterViewInit {
   }
 
   Eliminar(personDelete: Person) {
-    console.log("Entre a eliminar");
     this.confirmationService.confirm({
       message: 'Seguro que desea eliminar la persona' + personDelete.fullName,
       header: 'Confirmación eliminación',

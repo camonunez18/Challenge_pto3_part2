@@ -21,6 +21,7 @@ export class AddComponent implements OnInit {
   submitted: boolean;
 
   constructor(private router: Router, private service: ServiceService,
+
     private fb: FormBuilder, private messageService: MessageService) { }
 
   ngOnInit(): void {
@@ -29,6 +30,7 @@ export class AddComponent implements OnInit {
       'birth': new FormControl('', Validators.required)
     });
   }
+
 
 
   onSubmit(value: string) {
@@ -40,6 +42,7 @@ export class AddComponent implements OnInit {
     this.service.creaPerson(this.personNew);
     alert("Se ha agregado con exito a " + this.personNew.fullName);
     this.router.navigate(["listar"]);
+
 
   }
 }

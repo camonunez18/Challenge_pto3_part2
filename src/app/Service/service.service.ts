@@ -14,13 +14,14 @@ export class ServiceService {
   getPeople(){
     return this.http.get<Person[]>(this.Url);
   }
-
   creaPerson(person:Person){
     this.http.post<Person>(this.Url, person);
+
   }
 
   deletePerson(personDelete:Person){
     console.log("Mensaje en Service: " + JSON.stringify(personDelete));
     this.http.delete<Person>(this.Url+"?id="+personDelete.id);
+
   } 
 }
