@@ -54,6 +54,7 @@ export class ListarComponent implements OnInit, AfterViewInit {
         this.service.deletePerson(personDelete);
         this.people = this.people.filter(p => p !== personDelete);
         alert("Se ha eliminado la persona: " + personDelete.fullName);
+
       }
     });
   }
