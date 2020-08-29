@@ -15,12 +15,12 @@ export class ServiceService {
     return this.http.get<Person[]>(this.Url);
   }
 
-  createMovie(person:Person){
-    return this.http.post<Person>(this.Url, person);
+  creaPerson(person:Person){
+    this.http.post<Person>(this.Url, person);
   }
 
   deletePerson(personDelete:Person){
     console.log("Mensaje en Service: " + JSON.stringify(personDelete));
-    return this.http.delete<Person>(this.Url+"?id="+personDelete.id);
+    this.http.delete<Person>(this.Url+"?id="+personDelete.id);
   } 
 }

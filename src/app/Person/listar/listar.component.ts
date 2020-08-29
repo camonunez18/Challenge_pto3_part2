@@ -43,6 +43,7 @@ export class ListarComponent implements OnInit, AfterViewInit {
   }
 
   Eliminar(personDelete: Person) {
+    console.log("Entre a eliminar");
     this.confirmationService.confirm({
       message: 'Seguro que desea eliminar la persona' + personDelete.fullName,
       header: 'Confirmación eliminación',
@@ -50,11 +51,10 @@ export class ListarComponent implements OnInit, AfterViewInit {
       accept: () => {
         console.log("Mensaje: " + JSON.stringify(personDelete));
         this.people = this.people.filter(p => p !== personDelete);
-        this.service.deletePerson(personDelete)
-          .subscribe(data => {
-            this.people = this.people.filter(p => p !== personDelete);
-            alert("Se ha eliminado la persona: " + personDelete.fullName);
-          })
+        this.service.deletePerson(personDelete);
+        this.people = this.people.filter(p => p !== personDelete);
+        alert("Se ha eliminado la persona: " + personDelete.fullName);
+
       }
     });
   }

@@ -20,6 +20,6 @@ describe('ListarComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).toHaveBeenCalled();
   });
 });

@@ -20,27 +20,26 @@ export class AddComponent implements OnInit {
 
   submitted: boolean;
 
-  constructor(private router:Router, private service:ServiceService,
+  constructor(private router: Router, private service: ServiceService,
     private fb: FormBuilder, private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.userform = this.fb.group({
       'nombre': new FormControl('', Validators.required),
-      'birth' : new FormControl('',Validators.required)
+      'birth': new FormControl('', Validators.required)
     });
   }
 
-  
+
   onSubmit(value: string) {
     this.submitted = true;
     this.Guardar();
   }
 
-  Guardar(){
-    this.service.createMovie(this.personNew)
-    .subscribe(data=>{
-      alert("Se ha agregado con exito a "+this.personNew.fullName);
-      this.router.navigate(["listar"]);
-    })
+  Guardar() {
+    this.service.creaPerson(this.personNew);
+    alert("Se ha agregado con exito a " + this.personNew.fullName);
+    this.router.navigate(["listar"]);
+
   }
 }
